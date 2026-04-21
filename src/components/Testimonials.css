@@ -1,0 +1,124 @@
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+
+.testimonials {
+  position: relative;
+  padding: var(--space-24) 0;
+  background: linear-gradient(135deg, var(--color-primary-dk) 0%, var(--color-primary) 55%, var(--color-primary-lt) 100%);
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+/* Diamond tile background pattern */
+.testimonials-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 20px,
+      rgba(255, 255, 255, 0.03) 20px,
+      rgba(255, 255, 255, 0.03) 22px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 20px,
+      rgba(255, 255, 255, 0.03) 20px,
+      rgba(255, 255, 255, 0.03) 22px
+    );
+  pointer-events: none;
+}
+
+.testimonials-inner {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+/* Giant quotation mark column */
+.testimonials-quote-col {
+  display: flex;
+  justify-content: center;
+}
+
+.giant-quote {
+  font-family: var(--font-display);
+  font-size: 18rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-accent);
+  opacity: 0.25;
+  user-select: none;
+  margin-top: -40px;
+}
+
+/* Stars */
+.stars {
+  display: flex;
+  gap: var(--space-1);
+  color: var(--color-gold-lt);
+  margin-bottom: var(--space-6);
+}
+
+/* Light eyebrow variant */
+.eyebrow-light {
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+.eyebrow-light::before,
+.eyebrow-light::after {
+  background: var(--color-accent);
+  opacity: 0.5;
+}
+
+/* Quote text */
+.testimonial-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.85rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: var(--space-8);
+}
+
+/* Author */
+.testimonial-footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.testimonial-author {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 700;
+  font-size: var(--text-lg);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.testimonial-detail {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .testimonials-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .testimonials-quote-col { display: none; }
+
+  .testimonials {
+    padding: var(--space-16) 0;
+  }
+}

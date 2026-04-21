@@ -1,0 +1,378 @@
+/* ============================================================
+   SERVICES PAGE — Opal Events
+   ============================================================ */
+
+.small-container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.section-lead {
+  color: var(--color-text-light);
+  font-size: var(--text-lg);
+  margin-top: var(--space-4);
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================
+   ALL SERVICES — max 3-column grid
+   ============================================================ */
+
+.core-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.core-card {
+  position: relative;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: all var(--duration-mid) var(--ease-out);
+  overflow: hidden;
+}
+
+.core-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  opacity: 0;
+  transition: opacity var(--duration-mid) var(--ease-out);
+}
+
+.core-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.core-card:hover::before {
+  opacity: 1;
+}
+
+/* Card header row */
+.core-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.service-eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  opacity: 0.15;
+  line-height: 1;
+}
+
+.service-icon {
+  width: 44px;
+  height: 44px;
+  color: var(--color-accent);
+  transition: color var(--duration-mid) var(--ease-out), transform var(--duration-mid) var(--ease-out);
+}
+
+.core-card:hover .service-icon {
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.core-card-title {
+  font-size: var(--text-xl);
+  color: var(--color-primary-dk);
+  line-height: 1.25;
+  margin-top: var(--space-2);
+}
+
+.core-card-desc {
+  font-size: var(--text-base);
+  color: var(--color-text-mid);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.service-link {
+  margin-top: var(--space-4);
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: gap var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.service-link:hover {
+  color: var(--color-accent);
+  gap: var(--space-4);
+}
+
+/* ============================================================
+   EVENTS SECTION — light theme
+   ============================================================ */
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12) var(--space-8) var(--space-10);
+  background: linear-gradient(160deg, #f0f4ff 0%, #ffffff 60%);
+  border: 1px solid rgba(0, 76, 179, 0.08);
+  border-radius: var(--radius-xl);
+  transition: all var(--duration-mid) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  justify-content: center;
+}
+
+/* Glowing orb behind icon */
+.event-card::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(0, 116, 255, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  transition: opacity var(--duration-mid) var(--ease-out);
+  pointer-events: none;
+}
+
+.event-card:hover {
+  background: linear-gradient(160deg, #e8efff 0%, #f5f8ff 100%);
+  border-color: rgba(0, 76, 179, 0.18);
+  transform: translateY(-10px);
+  box-shadow: 0 24px 48px -12px rgba(0, 76, 179, 0.15);
+}
+
+
+/* Icon container — glowing circle */
+.event-icon-wrap {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 116, 255, 0.08) 0%, rgba(0, 76, 179, 0.05) 100%);
+  border: 1px solid rgba(0, 116, 255, 0.12);
+  border-radius: 50%;
+  margin-bottom: var(--space-6);
+  color: var(--color-accent);
+  flex-shrink: 0;
+  transition: all var(--duration-mid) var(--ease-out);
+  position: relative;
+  z-index: 1;
+}
+
+.event-icon-wrap svg {
+  width: 36px;
+  height: 36px;
+}
+
+.event-card:hover .event-icon-wrap {
+  background: linear-gradient(135deg, rgba(0, 116, 255, 0.15) 0%, rgba(0, 76, 179, 0.1) 100%);
+  border-color: rgba(0, 116, 255, 0.25);
+  color: var(--color-primary);
+  transform: scale(1.08);
+  box-shadow: 0 8px 24px -4px rgba(0, 76, 179, 0.2);
+}
+
+.event-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-primary-dk);
+  line-height: 1.3;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.event-note {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-text-light);
+  margin-top: var(--space-1);
+  letter-spacing: 0.01em;
+}
+
+
+/* ============================================================
+   LET'S CONNECT CTA (shared pattern)
+   ============================================================ */
+
+.portfolio-cta-modern {
+  padding: var(--space-16) 0;
+  background: linear-gradient(135deg, #020817 0%, #001a3d 100%);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.p-cta-flex {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: var(--space-12);
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  padding: var(--space-12);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.eyebrow-light {
+  color: rgba(255, 255, 255, 0.55) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.eyebrow-light::before,
+.eyebrow-light::after {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.p-cta-left h2 {
+  font-size: var(--text-4xl);
+  color: var(--color-white);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.p-cta-left h2 em {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-gold, #c9a96e);
+}
+
+.p-cta-right p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-8);
+  max-width: 440px;
+}
+
+.p-cta-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-premium {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--color-gold, #c9a96e);
+  color: var(--color-white);
+  padding: 1rem 2.2rem;
+  border-radius: 100px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  transition: all var(--duration-mid) var(--ease-out);
+  border: 1px solid var(--color-gold, #c9a96e);
+  text-decoration: none;
+}
+
+.btn-premium:hover {
+  background: transparent;
+  color: var(--color-gold, #c9a96e);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -10px var(--color-gold, #c9a96e);
+}
+
+.p-cta-glimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+  transform: skewX(-25deg);
+  animation: p-cta-glimmer 6s infinite linear;
+}
+
+@keyframes p-cta-glimmer {
+  0% { left: -150%; }
+  33%, 100% { left: 150%; }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .core-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .p-cta-flex {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    text-align: center;
+    padding: var(--space-10) var(--space-8);
+  }
+
+  .p-cta-right p {
+    margin: 0 auto var(--space-8);
+  }
+
+  .p-cta-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .core-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .core-card {
+    padding: var(--space-10) var(--space-8);
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .p-cta-left h2 {
+    font-size: var(--text-3xl);
+  }
+}

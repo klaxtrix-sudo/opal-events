@@ -1,0 +1,232 @@
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;      /* center vertically */
+  justify-content: center;   /* center horizontally */
+  overflow: hidden;
+  color: var(--color-white);
+  background-color: var(--color-primary-dk);
+}
+
+/* Background photo */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* Enhanced Dual-Layer Overlay: ensures total readability without killing the photo */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* Multi-stop gradient for sophisticated depth */
+  background: linear-gradient(
+    to bottom,
+    rgba(3, 8, 22, 0.55) 0%,
+    rgba(3, 8, 22, 0.25) 30%,
+    rgba(3, 8, 22, 0.45) 65%,
+    rgba(3, 8, 22, 0.90) 100%
+  );
+  z-index: 1;
+}
+
+/* Content container */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-content-inner {
+  max-width: 920px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* align children to center */
+  text-align: center;       /* center text */
+}
+
+/* Wrapper classes for staggered animations */
+.hero-eyebrow-wrapper,
+.hero-title-wrapper,
+.hero-text-wrapper,
+.hero-actions-wrapper {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Eyebrow / Tagline — Redesigned for maximum readability & luxury */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-family: var(--font-body);
+  font-size: 1rem;            /* Increased from 0.85rem */
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin-bottom: var(--space-6);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.eyebrow-line {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Heading — Editorial typography */
+.hero-heading {
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  color: var(--color-white);
+  margin-bottom: var(--space-6);
+  letter-spacing: -0.02em;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.hero-heading .display-italic {
+  display: block;
+  font-size: 0.9em;
+  color: var(--color-accent);
+  margin-top: 0.1em;
+  text-shadow: 0 2px 20px rgba(0, 181, 226, 0.3);
+}
+
+/* Subtext */
+.hero-sub {
+  font-family: var(--font-body);
+  font-size: 1rem;            /* Increased from 0.85rem */
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  max-width: 800px;
+  color: var(--color-white);
+  margin-bottom: var(--space-12);
+  line-height: 1.6;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+/* Buttons container */
+.hero-actions {
+  display: flex;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Specific Hero Button Enhancements */
+.hero-actions .btn {
+  padding: 1.125rem 2.75rem;
+}
+
+.hero-actions .btn-glass {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+}
+
+.hero-actions .btn-glass:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+/* Sparkle motifs — refined for "Diamond Dust" effect */
+.sparkle {
+  position: absolute;
+  z-index: 2;
+  color: var(--color-accent);
+  animation: sparkle-float 5s ease-in-out infinite;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.sparkle-1 { top: 15%; right: 20%; width: 14px; height: 14px; animation-duration: 7s; }
+.sparkle-2 { top: 25%; right: 12%; width: 8px; height: 8px; animation-duration: 4s; animation-delay: 1s; }
+.sparkle-3 { top: 10%; left: 15%; width: 18px; height: 18px; animation-duration: 9s; animation-delay: 2s; }
+
+/* Scroll indicator — sleek vertical line */
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  color: rgba(255,255,255,0.6);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.scroll-indicator svg {
+  width: 20px;
+  height: 20px;
+  animation: scroll-bounce 2s var(--ease-in-out) infinite;
+}
+
+/* STAGGERED REVEAL ANIMATIONS — Scoped specifically to Hero */
+.hero-stagger > * > * {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+              opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hero-stagger.is-visible > * > * {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hero-stagger > *:nth-child(1) > * { transition-delay: 200ms; }
+.hero-stagger > *:nth-child(2) > * { transition-delay: 400ms; }
+.hero-stagger > *:nth-child(3) > * { transition-delay: 600ms; }
+.hero-stagger > *:nth-child(4) > * { transition-delay: 800ms; }
+
+/* Mobile refinements */
+@media (max-width: 991px) {
+  .hero-heading { font-size: clamp(2.8rem, 10vw, 5rem); }
+  .hero-content { text-align: center; }
+  .hero-content-inner { margin: 0 auto; }
+  .hero-eyebrow, .hero-actions { justify-content: center; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+}
+
+@media (max-width: 768px) {
+  .hero { min-height: 600px; padding: var(--space-24) 0; }
+  .hero-actions { flex-direction: column; gap: var(--space-4); }
+  .hero-actions .btn { width: 100%; text-align: center; }
+  .sparkle-3 { display: none; }
+}
+
+@media (max-width: 480px) {
+  .hero { min-height: 560px; }
+  .hero-heading { font-size: 2.5rem; line-height: 1.1; }
+  .hero-eyebrow { font-size: 0.75rem; gap: var(--space-2); margin-bottom: var(--space-4); }
+  .eyebrow-line { width: 16px; }
+  .hero-sub { font-size: 0.85rem; margin-bottom: var(--space-8); }
+}
+

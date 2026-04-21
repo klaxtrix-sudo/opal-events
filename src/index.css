@@ -1,0 +1,342 @@
+/* ============================================================
+   OPAL EVENTS — GLOBAL DESIGN SYSTEM
+   ============================================================ */
+
+:root {
+  /* Brand Colours */
+  --color-primary:    #004CB3;
+  --color-primary-dk: #002B6B;
+  --color-primary-lt: #1A6FD4;
+  --color-accent:     #00B5E2;
+  --color-accent-dk:  #0094BB;
+  --color-gold:       #AF8C32;
+  --color-gold-lt:    #D4B152;
+
+  /* Neutral Palette */
+  --color-text:       #1A1A2E;
+  --color-text-mid:   #4A4A6A;
+  --color-text-light: #7A7A9A;
+  --color-white:      #FFFFFF;
+  --color-bg:         #FDFCFB;
+  --color-bg-light:   #F2F6FF;
+  --color-bg-warm:    #F9F8F6;
+  --color-border:     rgba(0, 76, 179, 0.08);
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  /* Type Scale */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  2rem;
+  --text-4xl:  2.75rem;
+  --text-5xl:  clamp(3rem, 6vw, 5.5rem);
+
+  /* Spacing */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Border Radius */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-pill: 100px;
+
+  /* Shadows */
+  --shadow-sm:  0 2px 8px rgba(0, 76, 179, 0.06);
+  --shadow-md:  0 6px 24px rgba(0, 76, 179, 0.10);
+  --shadow-lg:  0 16px 48px rgba(0, 76, 179, 0.12);
+  --shadow-glow: 0 0 32px rgba(0, 181, 226, 0.25);
+
+  /* Transitions */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast:   150ms;
+  --duration-mid:    300ms;
+  --duration-slow:   600ms;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--duration-mid) var(--ease-out);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+ul, ol { list-style: none; }
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  color: var(--color-primary-dk);
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+h1 { font-size: var(--text-5xl); }
+h2 { font-size: var(--text-4xl); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+
+.display-italic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+p { line-height: 1.7; }
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 var(--space-8);
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 var(--space-4); }
+}
+
+.section {
+  padding: var(--space-16) 0;
+}
+
+@media (max-width: 768px) {
+  .section { padding: var(--space-16) 0; }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-header h2 {
+  margin-bottom: var(--space-4);
+}
+
+.section-header p {
+  color: var(--color-text-mid);
+  font-size: var(--text-lg);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background-color: var(--color-accent);
+  opacity: 0.6;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all var(--duration-mid) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-lt));
+  color: var(--color-white);
+  box-shadow: 0 4px 16px rgba(0, 76, 179, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 76, 179, 0.4);
+  background: linear-gradient(135deg, var(--color-primary-lt), var(--color-accent));
+}
+
+.btn-primary:active { transform: translateY(0); }
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.55);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   BACKGROUNDS
+   ============================================================ */
+
+.bg-light   { background-color: var(--color-bg-light); }
+.bg-warm    { background-color: var(--color-bg-warm); }
+.bg-primary { background-color: var(--color-primary); }
+
+/* ============================================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger delays for child grid items */
+.stagger-children > *:nth-child(1) { transition-delay: 0ms; }
+.stagger-children > *:nth-child(2) { transition-delay: 80ms; }
+.stagger-children > *:nth-child(3) { transition-delay: 160ms; }
+.stagger-children > *:nth-child(4) { transition-delay: 240ms; }
+.stagger-children > *:nth-child(5) { transition-delay: 320ms; }
+.stagger-children > *:nth-child(6) { transition-delay: 400ms; }
+.stagger-children > *:nth-child(7) { transition-delay: 480ms; }
+.stagger-children > *:nth-child(8) { transition-delay: 560ms; }
+
+/* ============================================================
+   SPARKLE / DIAMOND MOTIF
+   ============================================================ */
+
+@keyframes sparkle-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+  33%  { transform: translateY(-10px) rotate(15deg); opacity: 1; }
+  66%  { transform: translateY(-5px) rotate(-10deg); opacity: 0.85; }
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.8; }
+  50%       { transform: translateY(6px); opacity: 0.4; }
+}
+
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

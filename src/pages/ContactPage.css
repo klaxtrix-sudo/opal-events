@@ -1,0 +1,262 @@
+/* ============================================================
+   CONTACT PAGE GRID
+   ============================================================ */
+.bg-soft-gradient {
+  background: radial-gradient(circle at 10% 20%, rgba(247, 250, 255, 1) 0%, rgba(242, 242, 242, 1) 90.1%);
+  position: relative;
+}
+
+.contact-page-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-12);
+  align-items: start;
+  padding: var(--space-12) 0;
+}
+
+/* GLASS FORM WRAPPER */
+.contact-page-form-wrap {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: var(--space-12);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 44, 107, 0.05);
+}
+
+.cp-form-header {
+  margin-bottom: var(--space-10);
+}
+
+.cp-form-header h2 {
+  font-size: var(--text-4xl);
+  color: var(--color-primary-dk);
+  margin-bottom: var(--space-2);
+}
+
+.cp-form-header p {
+  color: var(--color-text-mid);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-4);
+}
+
+.cp-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+}
+
+.cp-form-group {
+  margin-bottom: var(--space-8);
+  display: flex;
+  flex-direction: column;
+}
+
+.cp-form-group label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+  opacity: 0.8;
+}
+
+/* ELITE FORM CONTROLS */
+.cp-form-group input,
+.cp-form-group select,
+.cp-form-group textarea {
+  width: 100%;
+  padding: 0.85rem 0; 
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(0, 44, 107, 0.08);
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-primary-dk);
+  transition: all var(--duration-mid) var(--ease-out);
+  outline: none;
+}
+
+.cp-form-group input::placeholder,
+.cp-form-group textarea::placeholder {
+  color: #a0aec0;
+  font-size: 0.95rem;
+}
+
+.cp-form-group input:focus,
+.cp-form-group select:focus,
+.cp-form-group textarea:focus {
+  border-bottom-color: var(--color-primary);
+  box-shadow: none;
+}
+
+/* Custom Select Arrow */
+.cp-form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23004CB3' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  cursor: pointer;
+}
+
+/* Date Input Polish */
+.cp-form-group input[type="date"] {
+  cursor: pointer;
+}
+
+/* PREMIUM SUBMIT BUTTON */
+.cp-submit {
+  position: relative;
+  width: 100%;
+  padding: 1.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: var(--color-primary-dk);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 44, 107, 0.2);
+  transition: all var(--duration-mid) var(--ease-out);
+}
+
+.cp-submit:hover {
+  background: var(--color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 44, 107, 0.25);
+}
+
+/* Consultations Sidebar */
+.contact-page-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.cp-info-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: var(--space-12); /* Increased horizontal padding to match vertical */
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 15px 35px rgba(0, 44, 107, 0.05); /* Softer shadow */
+}
+
+.cp-info-card h3 {
+  font-size: var(--text-2xl);
+  color: var(--color-primary-dk);
+  margin-bottom: var(--space-6); /* More breathing room */
+}
+
+.cp-info-card p {
+  font-size: var(--text-sm);
+  color: var(--color-primary); /* Darker for better contrast */
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.cp-contact-links {
+  margin-top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.cp-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.1rem;
+  background: transparent;
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  letter-spacing: 0.05em;
+  transition: all var(--duration-mid) var(--ease-out);
+}
+
+.cp-link:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 76, 179, 0.15);
+}
+
+/* Hide labels in new action-pill style */
+.cp-label { display: none; }
+.cp-value { font-weight: inherit; }
+
+/* Emerald Multi-tone WhatsApp */
+.cp-link-wa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: 1.15rem;
+  background: linear-gradient(135deg, #004d36, #00805A); /* Deeper, more obsidian emerald */
+  color: white;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 20px rgba(0, 77, 54, 0.2);
+  transition: all var(--duration-mid) var(--ease-out);
+}
+
+.cp-link-wa:hover {
+  background: linear-gradient(135deg, #00805A, #00A87A);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(0, 128, 90, 0.2);
+}
+
+.cp-loc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary-dk); /* Deep Obsidian instead of Cyan */
+  color: var(--color-accent); /* Premium Gold text */
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 20px rgba(0, 44, 107, 0.15);
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .contact-page-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+}
+
+
+
+@media (max-width: 600px) {
+  .contact-page-form-wrap {
+    padding: var(--space-8) var(--space-6);
+  }
+  
+  .cp-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .cp-form-header h2 {
+    font-size: var(--text-2xl);
+  }
+}
