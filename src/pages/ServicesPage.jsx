@@ -4,6 +4,12 @@ import PageHero from '../components/PageHero';
 import './ServicesPage.css';
 import { useScrollReveal, useScrollRevealAll } from '../hooks/useScrollReveal';
 
+// Event Images
+import weddingsImg from '../assets/events-weddings.png';
+import celebrationsImg from '../assets/events-celebrations.png';
+import corporateImg from '../assets/events-corporate.png';
+import proposalsImg from '../assets/events-proposals.png';
+
 const allServices = [
   {
     id: 'planning',
@@ -154,49 +160,45 @@ const ServicesPage = () => {
           </div>
           <div className="events-grid" ref={eventsGridRef}>
 
-            <div className="event-card reveal">
-              <div className="event-icon-wrap">
-                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden="true">
-                  <path d="M6 14a10 10 0 0 1 20 0v2a10 10 0 0 1-20 0v-2Z" strokeLinecap="round"/>
-                  <path d="M16 4v4M11 5.5l2 3M21 5.5l-2 3" strokeLinecap="round"/>
-                  <path d="M8 26h16" strokeLinecap="round"/>
-                  <path d="M11 26v-4a5 5 0 0 1 10 0v4" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+            {/* Weddings */}
+            <div className="event-card-visual reveal">
+              <img src={weddingsImg} alt="Luxury Wedding Reception" className="event-bg-img" />
+              <div className="event-overlay">
+                <div className="event-content">
+                  <h3 className="event-title-visual">Weddings</h3>
+                  <p className="event-note-visual">inc. South Asian &amp; Nigerian</p>
+                </div>
               </div>
-              <h3 className="event-title">Weddings<span className="event-note">(inc. South Asian &amp; Nigerian)</span></h3>
             </div>
 
-            <div className="event-card reveal">
-              <div className="event-icon-wrap">
-                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden="true">
-                  <circle cx="16" cy="16" r="12" strokeLinecap="round"/>
-                  <path d="M16 10v6l4 2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M10 5.5l1.5 2.5M22 5.5l-1.5 2.5" strokeLinecap="round"/>
-                </svg>
+            {/* Celebrations */}
+            <div className="event-card-visual reveal">
+              <img src={celebrationsImg} alt="Sophisticated Milestone Party" className="event-bg-img" />
+              <div className="event-overlay">
+                <div className="event-content">
+                  <h3 className="event-title-visual">Celebrations &amp; Milestone Parties</h3>
+                </div>
               </div>
-              <h3 className="event-title">Celebrations &amp; Milestone Parties</h3>
             </div>
 
-            <div className="event-card reveal">
-              <div className="event-icon-wrap">
-                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden="true">
-                  <path d="M4 24V14l12-8 12 8v10" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M10 24v-7h12v7" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M14 24v-4h4v4" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+            {/* Corporate */}
+            <div className="event-card-visual reveal">
+              <img src={corporateImg} alt="Premium Corporate Away Day" className="event-bg-img" />
+              <div className="event-overlay">
+                <div className="event-content">
+                  <h3 className="event-title-visual">Corporate Away Days &amp; Team Building</h3>
+                </div>
               </div>
-              <h3 className="event-title">Corporate Away Days &amp; Team Building</h3>
             </div>
 
-            <div className="event-card reveal">
-              <div className="event-icon-wrap">
-                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden="true">
-                  <path d="M16 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" strokeLinecap="round"/>
-                  <path d="M6 26c0-5.523 4.477-10 10-10s10 4.477 10 10" strokeLinecap="round"/>
-                  <path d="M21 17l3-3M24 14l2-1" strokeLinecap="round"/>
-                </svg>
+            {/* Proposals */}
+            <div className="event-card-visual reveal">
+              <img src={proposalsImg} alt="Romantic Marriage Proposal Setting" className="event-bg-img" />
+              <div className="event-overlay">
+                <div className="event-content">
+                  <h3 className="event-title-visual">Proposals &amp; Private Dinners</h3>
+                </div>
               </div>
-              <h3 className="event-title">Proposals &amp; Private Dinners</h3>
             </div>
 
           </div>
