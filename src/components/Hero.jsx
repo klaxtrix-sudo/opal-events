@@ -44,12 +44,6 @@ const Hero = () => {
             </h1>
           </div>
 
-          <div className="hero-text-wrapper">
-            <p className="hero-sub">
-              Providing exceptional planning experiences tailored to your needs<br />
-              Sheffield, Yorkshire &amp; beyond
-            </p>
-          </div>
 
           <div className="hero-actions-wrapper">
             <div className="hero-actions">

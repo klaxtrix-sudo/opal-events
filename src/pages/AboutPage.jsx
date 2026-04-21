@@ -51,7 +51,7 @@ const AboutPage = () => {
               It gave me the chance to build my skills in areas such as budget management, scheduling, problem-solving, and logistics—all things that stand me in good stead for building my own business and helping my customers in their planning journey. A big part of these roles was supplier relationships, both building and maintaining them, something else that I've taken with me into my business to bring my customers a variety of options and ideas to bring their dreams to life.
             </p>
             <p>
-              Again, I moved onto another venue, this time a new, unestablished one that required the events side to be built from nothing. This is where my desire to build my own wedding and event planning business became difficult to ignore... so welcome to this journey of passion!
+              Again, I moved onto another venue, this time a new, unestablished one that required the events side to be built from nothing. This is where my desire to build my own wedding and event planning business became difficult to ignore. So welcome to this journey of passion!
             </p>
           </div>
         </div>
@@ -81,11 +81,11 @@ const AboutPage = () => {
             <div className="value-card reveal">
               <div className="value-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-                  <path d="M6 3L1.5 8L12 22L22.5 8L18 3H6Z" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M1.5 8H22.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M6 3L12 8L18 3" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M12 22L8 8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M12 22L16 8" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M6 3L1.5 8L12 22L22.5 8L18 3H6Z" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M1.5 8H22.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M6 3L12 8L18 3" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M12 22L8 8" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M12 22L16 8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
               <h3>Excellence</h3>
@@ -95,8 +95,8 @@ const AboutPage = () => {
             <div className="value-card reveal">
               <div className="value-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M16 21V5L19 2M19 2L22 5M19 2V5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M8 3V19L5 22M5 22L2 19M5 22V19" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M16 21V5L19 2M19 2L22 5M19 2V5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M8 3V19L5 22M5 22L2 19M5 22V19" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
               <h3>Transparency</h3>
@@ -106,7 +106,7 @@ const AboutPage = () => {
             <div className="value-card reveal">
               <div className="value-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 2V6M12 18V22M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07M2 12H6M18 12H22M4.93 19.07L7.76 16.24M16.24 7.76L19.07 4.93" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 2V6M12 18V22M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07M2 12H6M18 12H22M4.93 19.07L7.76 16.24M16.24 7.76L19.07 4.93" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
               <h3>Creativity</h3>
@@ -129,7 +129,7 @@ const AboutPage = () => {
                 <Link to="/contact" className="btn btn-premium">
                   <span>Discuss Your Event Vision</span>
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4.16663 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M4.16663 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </Link>
               </div>
