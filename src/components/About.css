@@ -3,10 +3,7 @@
    ============================================================ */
 
 .about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-16);
-  align-items: start;
+  display: block; /* Grid layout moved to .about-text-col for reordering support */
 }
 
 /* Link wrappers */
@@ -88,7 +85,29 @@
   line-height: 1;
 }
 
-/* Text column */
+/* Text column - Desktop layout */
+.about-text-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+/* Position image in the left column on desktop */
+.about-image-wrap {
+  grid-column: 1;
+  grid-row: 1 / span 10;
+}
+
+/* Position all text content in the right column on desktop */
+.about-text-col > .eyebrow,
+.about-text-col > .about-heading-link,
+.about-text-col > .about-lead,
+.about-text-col > .about-body,
+.about-text-col > .about-cta {
+  grid-column: 2;
+}
+
 .about-text-col h2 {
   margin-bottom: var(--space-6);
   line-height: 1.1;
@@ -116,14 +135,17 @@
 
 /* Responsive */
 @media (max-width: 992px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-12);
+  .about-text-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
   .about-image-wrap {
+    grid-column: auto;
+    grid-row: auto;
     max-width: 480px;
-    margin: 0 auto;
+    margin: var(--space-8) auto; /* Add vertical spacing as it's now between text */
   }
 
   .about-badge {

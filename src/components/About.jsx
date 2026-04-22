@@ -14,17 +14,6 @@ const About = () => {
     <section className="section" id="about" aria-label="About Opal Events">
       <div className="container about-grid">
 
-        {/* Image column */}
-        <div className="about-image-wrap reveal-left" ref={imgRef}>
-          <Link to="/about" className="about-image-link">
-            <img src={aboutImg} alt="Opal Events founder in an elegant venue" className="about-img" loading="lazy" />
-            <div className="about-badge" aria-hidden="true">
-              <span>✦</span>
-              <span>Est. 2023</span>
-            </div>
-          </Link>
-        </div>
-
         {/* Text column */}
         <div className="about-text-col reveal-right" ref={textRef}>
           <span className="eyebrow">Our Story</span>
@@ -35,6 +24,17 @@ const About = () => {
           <p className="about-lead">
             Isn't being a wedding planner every girl's dream? I just decided to follow mine...
           </p>
+
+          {/* Image inserted here for mobile reordering */}
+          <div className="about-image-wrap reveal-left" ref={imgRef}>
+            <Link to="/about" className="about-image-link">
+              <img src={aboutImg} alt="Opal Events founder in an elegant venue" className="about-img" loading="lazy" />
+              <div className="about-badge" aria-hidden="true">
+                <span>✦</span>
+                <span>Est. 2023</span>
+              </div>
+            </Link>
+          </div>
 
           <div className="about-body">
             <p>
