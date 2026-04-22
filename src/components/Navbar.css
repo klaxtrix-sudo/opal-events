@@ -150,11 +150,9 @@
   display: none;
   position: fixed;
   inset: 0;
-  background: linear-gradient(160deg, var(--color-primary-dk) 0%, #001840 100%);
+  background: linear-gradient(165deg, #020817 0%, #001a3d 100%);
   z-index: 999;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--duration-mid) var(--ease-out),
@@ -166,29 +164,111 @@
   visibility: visible;
 }
 
+/* Branded Background Watermark */
+.mobile-menu-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80vw;
+  color: rgba(255, 255, 255, 0.02);
+  pointer-events: none;
+  z-index: 1;
+  font-family: var(--font-display);
+}
+
+.mobile-menu-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 120px var(--space-8) 60px;
+  overflow-y: auto; /* Allow scrolling if content is tall */
+  -webkit-overflow-scrolling: touch;
+}
+
 .mobile-links {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--space-8);
-  text-align: center;
+  gap: var(--space-6);
+  text-align: center; /* Center links for a more balanced look */
+}
+
+.mobile-links li {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s var(--ease-out);
+  transition-delay: calc(var(--index) * 0.1s);
+}
+
+.mobile-menu.open .mobile-links li {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .mobile-links a {
   font-family: var(--font-display);
   font-size: var(--text-4xl);
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-  transition: color var(--duration-mid) var(--ease-out);
+  font-weight: 500;
+  color: var(--color-white);
+  text-decoration: none;
+  display: inline-block; /* Inline-block for better centering */
 }
 
-.mobile-links a:hover { color: var(--color-accent); }
-.mobile-nav-active { color: var(--color-accent) !important; }
+.mobile-nav-active {
+  color: var(--color-accent) !important;
+  font-style: italic;
+}
 
 .mobile-cta {
+  margin-top: var(--space-8) !important;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  justify-content: center;
   font-family: var(--font-body) !important;
-  font-size: var(--text-sm) !important;
-  margin-top: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem !important;
+  padding: 1.1rem !important;
+}
+
+/* Branded Footer in Menu */
+.mobile-menu-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-12);
+  padding-bottom: var(--space-4);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.8s var(--ease-out) 0.5s;
+}
+
+.mobile-menu.open .mobile-menu-footer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-mark {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-2xl);
+  color: var(--color-white);
+  opacity: 0.9;
+}
+
+.footer-detail {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
 }
 
 /* Responsive */
@@ -198,4 +278,13 @@
 
   .hamburger { display: flex; }
   .mobile-menu { display: flex; }
+}
+
+@media (max-height: 600px) {
+  .mobile-menu-container {
+    padding-top: 100px;
+  }
+  .mobile-links a {
+    font-size: var(--text-3xl);
+  }
 }

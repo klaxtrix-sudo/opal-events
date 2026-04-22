@@ -91,25 +91,34 @@ const Navbar = () => {
         className={`mobile-menu${menuOpen ? ' open' : ''}`}
         aria-hidden={!menuOpen}
       >
-        <ul className="mobile-links" role="list">
-          {NAV_LINKS.map(({ to, label, end }) => (
-            <li key={to}>
-              <NavLink
-                to={to}
-                end={end}
-                className={({ isActive }) => isActive ? 'mobile-nav-active' : ''}
-                onClick={handleNavClick}
-              >
-                {label}
-              </NavLink>
+        <div className="mobile-menu-watermark" aria-hidden="true">✦</div>
+        
+        <div className="mobile-menu-container">
+          <ul className="mobile-links" role="list">
+            {NAV_LINKS.map(({ to, label, end }, index) => (
+              <li key={to} style={{ '--index': index }}>
+                <NavLink
+                  to={to}
+                  end={end}
+                  className={({ isActive }) => isActive ? 'mobile-nav-active' : ''}
+                  onClick={handleNavClick}
+                >
+                  {label}
+                </NavLink>
+              </li>
+            ))}
+            <li style={{ '--index': NAV_LINKS.length }}>
+              <Link to="/contact" className="btn btn-primary mobile-cta" onClick={handleNavClick}>
+                Book a Consultation
+              </Link>
             </li>
-          ))}
-          <li>
-            <Link to="/contact" className="btn btn-primary mobile-cta" onClick={handleNavClick}>
-              Book a Consultation
-            </Link>
-          </li>
-        </ul>
+          </ul>
+
+          <div className="mobile-menu-footer">
+            <span className="footer-mark">Opal Events</span>
+            <span className="footer-detail">Est. 2023 ✦ Sheffield, UK</span>
+          </div>
+        </div>
       </div>
     </>
   );
