@@ -44,7 +44,6 @@ const Footer = () => (
           <li><Link to="/services">Services</Link></li>
           <li><Link to="/about">About Us</Link></li>
           <li><Link to="/portfolio">Portfolio</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
         </ul>
       </div>
 
@@ -87,8 +86,10 @@ const Footer = () => (
       <div className="container footer-bottom-inner">
         <p>&copy; {new Date().getFullYear()} Opal Events Ltd. All Rights Reserved.</p>
         <p className="footer-seo">
-          <Link to="/">Wedding Planner Sheffield</Link> ·
-          <Link to="/">Event Planner Yorkshire</Link> ·
+          <Link to="/">Wedding Planner Sheffield</Link> 
+          <span className="footer-seo-sep">·</span>
+          <Link to="/">Event Planner Yorkshire</Link> 
+          <span className="footer-seo-sep">·</span>
           <Link to="/">Wedding Coordinator Sheffield</Link>
         </p>
       </div>
