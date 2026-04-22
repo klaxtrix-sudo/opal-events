@@ -8,7 +8,6 @@ import w2 from '../assets/gallery-wedding-2.png';
 import corp from '../assets/gallery-corporate.png';
 import dinner from '../assets/gallery-private-dinner.png';
 import anniversary from '../assets/gallery-anniversary.png';
-import about from '../assets/about.png';
 import w3 from '../assets/gallery-wedding-3.png';
 
 const items = [
@@ -22,6 +21,7 @@ const items = [
 const Gallery = () => {
   const headRef = useScrollReveal({ threshold: 0.2 });
   const gridRef = useScrollRevealAll({ threshold: 0.06 });
+  const footRef = useScrollReveal({ threshold: 0.1 });
 
   return (
     <section className="section bg-light" id="portfolio" aria-label="Portfolio Gallery">
@@ -48,7 +48,7 @@ const Gallery = () => {
           ))}
         </div>
 
-        <div className="gallery-footer reveal" style={{ textAlign: 'center', marginTop: 'var(--space-12)' }}>
+        <div className="gallery-footer reveal" ref={footRef}>
           <Link to="/portfolio" className="btn btn-outline">
             View Full Portfolio
           </Link>

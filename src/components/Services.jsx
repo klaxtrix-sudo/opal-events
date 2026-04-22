@@ -70,6 +70,7 @@ const services = [
 const Services = () => {
   const headRef = useScrollReveal({ threshold: 0.2 });
   const gridRef = useScrollRevealAll({ threshold: 0.08 });
+  const footRef = useScrollReveal({ threshold: 0.1 });
 
   return (
     <section className="section bg-warm" id="services" aria-label="Our Services">
@@ -99,7 +100,7 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="services-footer reveal">
+        <div className="services-footer reveal" ref={footRef}>
           <Link to="/services" className="services-cta-link">
             <span>Discover all our specialized planning services</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

@@ -142,3 +142,10 @@
     margin-top: 0 !important; /* Remove internal margin-top to use purely section padding on mobile */
   }
 }
+
+/* Desktop Spacing Refinement */
+@media (min-width: 993px) {
+  .gallery-footer {
+    margin-top: var(--space-8);
+  }
+}
