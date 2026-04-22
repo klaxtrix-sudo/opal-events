@@ -119,6 +119,6 @@
   .testimonials-quote-col { display: none; }
 
   .testimonials {
-    padding: var(--space-16) 0;
+    padding: 2.34375rem 0; /* Align with global .section 75px target */
   }
 }

@@ -133,7 +133,7 @@
   }
 
   .contact-teaser-card {
-    margin: var(--space-12) auto 0; /* Center horizontally and add top gap */
+    margin: 0 auto; /* Remove top gap, let section padding handle it */
   }
 }
 

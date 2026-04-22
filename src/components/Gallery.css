@@ -137,4 +137,8 @@
   #portfolio .section-header h2 {
     font-size: var(--text-3xl);
   }
+
+  .gallery-footer {
+    margin-top: 0 !important; /* Remove internal margin-top to use purely section padding on mobile */
+  }
 }
