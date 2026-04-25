@@ -139,7 +139,7 @@
   }
 
   .gallery-footer {
-    margin-top: 0 !important; /* Remove internal margin-top to use purely section padding on mobile */
+    margin-top: var(--space-8);
   }
 }
 
