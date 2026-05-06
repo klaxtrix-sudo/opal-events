@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import './AboutPage.css';
-import aboutImg from '../assets/about.png';
+import visionaryImg from '../assets/visionary_journey.jpg';
 import { useScrollReveal, useScrollRevealAll } from '../hooks/useScrollReveal';
 
 const AboutPage = () => {
@@ -25,7 +25,7 @@ const AboutPage = () => {
         <div className="container about-page-grid">
           <div className="about-page-img reveal-left" ref={storyImgRef}>
             <div className="img-frame">
-              <img src={aboutImg} alt="Opal Events Founder" loading="lazy" />
+              <img src={visionaryImg} alt="Opal Events Founder" loading="lazy" />
             </div>
             <div className="founder-badge">
               <strong>Est. 2023</strong>
@@ -39,7 +39,10 @@ const AboutPage = () => {
               "Isn't being a wedding planner every girl's dream? I just decided to follow mine..."
             </p>
             <p>
-              In 2020, while working full-time, I did an online Wedding Planning course which delved into weddings of different cultures, such as Nigerian, South Asian, and Slovakian. It also looked at how to run your own wedding planning business—I spent months debating how someone with so much passion but little experience in the industry could start that business.
+              In 2020, while working full-time, I did an online Wedding Planning course which delved into weddings of different cultures, such as Nigerian, South Asian, and Slovakian. During the planning of my own multicultural wedding (British/Nigerian), I was reminded of my love for planning and the cultural variety I experienced in my training.
+            </p>
+            <p>
+              The course also looked at how to run your own wedding planning business—I spent months debating how someone with so much passion but little experience in the industry could start that business.
             </p>
             <p>
               In the end, what made the most sense to me was to at least start in the industry, so in 2023, I quit my job and started working freelance as a Wedding Coordinator for a venue. That’s when I realized what it takes to succeed in weddings and events: hard work and long hours, but also passion, great customer service, and connections. It solidified that this was what I wanted to do.
@@ -48,10 +51,13 @@ const AboutPage = () => {
               I moved to a venue close to the city centre and within 18 months, I had been promoted twice—from Wedding & Venue Assistant to Wedding & Event Coordinator, and then from Coordinator to Hospitality Manager. The transition into these roles felt natural and expanded my knowledge and understanding of events as a whole, as well as the detail behind planning and running not only the events but hiring, training, and leading a passionate team too.
             </p>
             <p>
-              It gave me the chance to build my skills in areas such as budget management, scheduling, problem-solving, and logistics—all things that stand me in good stead for building my own business and helping my customers in their planning journey. A big part of these roles was supplier relationships, both building and maintaining them, something else that I've taken with me into my business to bring my customers a variety of options and ideas to bring their dreams to life.
+              It gave me the chance to build my skills in areas such as budget management, scheduling, problem-solving, and logistics—all things that stand me in good stead for building my own business and helping my customers in their planning journey.
             </p>
             <p>
-              Again, I moved onto another venue, this time a new, unestablished one that required the events side to be built from nothing. This is where my desire to build my own wedding and event planning business became difficult to ignore. So welcome to this journey of passion!
+              Again, I moved onto another venue, this time a new, unestablished one that required the events side to be built from nothing. This is where my desire to build my own wedding and event planning business became difficult to ignore.
+            </p>
+            <p>
+              So welcome to this journey of passion!
             </p>
           </div>
         </div>

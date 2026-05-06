@@ -159,25 +159,7 @@ const PortfolioPage = () => {
                   </div>
                 </div>
                 <div className="pf-info">
-                  <div className="pf-header">
-                    <h3>{item.alt}</h3>
-                    <div className="pf-meta">
-                      <span>{item.loc}</span>
-                      <span className="pf-dot"></span>
-                      <span>{item.date}</span>
-                    </div>
-                  </div>
-                  
-                  <div className="pf-story">
-                    <div className="pf-story-item">
-                      <strong>The Brief:</strong>
-                      <p>{item.brief}</p>
-                    </div>
-                    <div className="pf-story-item">
-                      <strong>The Outcome:</strong>
-                      <p>{item.outcome}</p>
-                    </div>
-                  </div>
+                  <h3>{item.alt}</h3>
                 </div>
               </div>
             ))}

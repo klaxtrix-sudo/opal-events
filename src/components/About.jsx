@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './About.css';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import aboutImg from '../assets/about.png';
+import aboutImg from '../assets/about_story.jpg';
 
 
 
@@ -27,32 +27,31 @@ const About = () => {
 
         <div className="about-content" ref={textRef}>
           <span className="eyebrow">Our Story</span>
-          
+
           <Link to="/about" className="about-heading-link">
             <h2>A Journey <em className="display-italic">of Passion</em></h2>
           </Link>
 
           <p className="about-lead">
-            Isn't being a wedding planner every girl's dream? I just decided to follow mine...
+            "Isn't being a wedding planner every girl's dream? I just decided to follow mine..."
           </p>
 
           <div className="about-body">
             <p>
-              In 2020, while working full-time, I did an online Wedding Planning course
-              which delved into weddings of different cultures such as Nigerian, South Asian,
-              and Slovakian. It also looked at how to run your own wedding planning business—I
-              spent months debating how someone with so much passion but little experience
-              in the industry could start that business. In the end, what made the most sense
-              to me was to at least start in the industry, so in 2023 I quit my job and
-              started working freelance as a Wedding Coordinator for a venue.
+              In 2020, while working full-time, I did an online Wedding Planning course which
+              delved into weddings of different cultures, such as Nigerian, South Asian, and
+              Slovakian. During the planning of my own multicultural wedding (British/Nigerian),
+              I was reminded of my love for planning and the cultural variety I experienced in
+              my training.
             </p>
             <p>
-              That's when I realised what it takes to succeed in weddings and events: hard
-              work and long hours, but also passion, great customer service, and connections.
-              It solidified that this was what I wanted to do. I moved to a venue close to
-              the city centre and within 18 months I had been promoted twice—from Wedding &
-              Venue Assistant to Wedding & Event Coordinator, and from Coordinator to
-              Hospitality Manager.
+              The course also looked at how to run your own wedding planning business—I spent months
+              debating how someone with so much passion but little experience in the industry could
+              start that business.
+            </p>
+            <p >
+              In the end, what made the most sense to me was to at least start in the industry, so in
+              2023...
             </p>
           </div>
 
