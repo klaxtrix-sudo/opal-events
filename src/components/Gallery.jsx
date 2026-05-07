@@ -3,19 +3,18 @@ import { Link } from 'react-router-dom';
 import './Gallery.css';
 import { useScrollReveal, useScrollRevealAll } from '../hooks/useScrollReveal';
 
-import w1 from '../assets/gallery-wedding-1.png';
-import w2 from '../assets/gallery-wedding-2.png';
-import corp from '../assets/gallery-corporate.png';
-import dinner from '../assets/gallery-private-dinner.png';
-import anniversary from '../assets/gallery-anniversary.png';
-import w3 from '../assets/gallery-wedding-3.png';
+import pWeddingTO from '../assets/portfolio_wedding_TO.jpg';
+import pCorpSVCE from '../assets/portfolio_corp_SVCE.jpg';
+import pNina from '../assets/portfolio_nina_draws.jpg';
+import pDessert from '../assets/portfolio_dessert_composite.jpg';
+import pGuestbook from '../assets/portfolio_guest_seat_composite.jpg';
 
 const items = [
-  { id: 1, src: w1,     alt: 'Grand country house wedding reception', rowSpan: 2, colSpan: 2 },
-  { id: 2, src: w2,     alt: 'Vibrant South Asian wedding mandap',    rowSpan: 1, colSpan: 1 },
-  { id: 3, src: corp,   alt: 'Sleek corporate gala dinner setup',     rowSpan: 1, colSpan: 1 },
-  { id: 4, src: dinner, alt: 'Intimate rooftop proposal dinner',      rowSpan: 1, colSpan: 1 },
-  { id: 5, src: anniversary,  alt: 'Luxury wedding anniversary celebration', rowSpan: 1, colSpan: 2 },
+  { id: 1, src: pWeddingTO,  alt: 'T & O Ceremony 2025',             rowSpan: 2, colSpan: 2 },
+  { id: 2, src: pCorpSVCE,   alt: 'SVCE Event 2026',                 rowSpan: 1, colSpan: 1 },
+  { id: 3, src: pNina,       alt: 'Nina Draws Live Event Art',       rowSpan: 1, colSpan: 1 },
+  { id: 4, src: pDessert,    alt: 'Luxury Dessert Table Display',    rowSpan: 1, colSpan: 1 },
+  { id: 5, src: pGuestbook,  alt: 'Guestbook & Seating Plan Setup',  rowSpan: 1, colSpan: 2 },
 ];
 
 const Gallery = () => {

@@ -11,82 +11,147 @@ import dinner from '../assets/gallery-private-dinner.png';
 import anniversary from '../assets/gallery-anniversary.png';
 import about from '../assets/about.png';
 import w3 from '../assets/gallery-wedding-3.png';
+import pWeddingTO from '../assets/portfolio_wedding_TO.jpg';
+import pWeddingTO2 from '../assets/portfolio_wedding_TO_2.jpg';
+import pCorpSVCE from '../assets/portfolio_corp_SVCE.jpg';
+import pCorpSVCE2 from '../assets/portfolio_corp_SVCE_2.jpg';
+import pAnniversaryDR from '../assets/portfolio_anniversary_DR.jpg';
+import pAnniversaryDR2 from '../assets/portfolio_anniversary_DR_2.jpg';
+import pAnniversaryDR3 from '../assets/portfolio_anniversary_DR_3.jpg';
+import pNina1 from '../assets/portfolio_nina_draws.jpg';
+import pNina2 from '../assets/portfolio_nina_draws_2.jpg';
+import pNina3 from '../assets/portfolio_nina_draws_3.jpg';
+import pDessertComp from '../assets/portfolio_dessert_composite.jpg';
+import pDessert1C from '../assets/portfolio_dessert_1_crop.jpg';
+import pDessert2C from '../assets/portfolio_dessert_2_crop.jpg';
+import pGuestSeatComp from '../assets/portfolio_guest_seat_composite.jpg';
+import pGuestbookC from '../assets/portfolio_guestbook_crop.jpg';
+import pSeatingC from '../assets/portfolio_seating_plan_crop.jpg';
+import pFounder from '../assets/portfolio_founder_1610.jpg';
 
 const items = [
   { 
     id: 1,  
-    src: w1,     
-    alt: 'Grand country house wedding reception', 
+    images: [pWeddingTO, pWeddingTO2],     
+    alt: 'T & O Ceremony 2025', 
     category: 'Weddings',      
-    loc: 'Wentworth Woodhouse', 
-    date: 'Summer 2024',
-    brief: 'A grand, traditional celebration for 150 guests in a Grade I listed building.',
-    outcome: 'Successfully coordinated with 12 vendors to deliver a seamless 14-hour event timeline.'
   },
   { 
     id: 2,  
-    src: w2,     
-    alt: 'Vibrant garden wedding',                
-    category: 'Weddings',      
-    loc: 'Sheffield Botanical Gardens', 
-    date: 'Spring 2024',
-    brief: 'An intimate, nature-inspired ceremony focused on sustainability and local florals.',
-    outcome: 'Created a zero-waste event plan that maintained high luxury standards.'
+    images: [pCorpSVCE, pCorpSVCE2],     
+    alt: 'SVCE Event 2026',                
+    category: 'Corporate',     
   },
   { 
     id: 3,  
-    src: corp,   
-    alt: 'Modern corporate gala',                  
-    category: 'Corporate',     
-    loc: 'The Kelham Island Museum', 
-    date: 'Winter 2023',
-    brief: 'Annual milestone celebration for a Sheffield tech firm requiring industrial-chic styling.',
-    outcome: 'Transformed a museum space into a high-energy gala environment within a 4-hour setup window.'
+    images: [pAnniversaryDR, pAnniversaryDR2, pAnniversaryDR3],   
+    alt: 'D&R Anniversary 2025',                  
+    category: 'Others',     
   },
   { 
     id: 4,  
-    src: dinner, 
-    alt: 'Intimate rooftop proposal',              
-    category: 'Private',       
-    loc: 'Private Rooftop, Sheffield', 
-    date: 'Autumn 2023',
-    brief: 'A high-stakes, private proposal requiring maximum discretion and romantic atmosphere.',
-    outcome: 'Executed a flawless surprise reveal with 360-degree city views and bespoke catering.'
+    images: [pNina1, pNina3], 
+    alt: 'Nina Draws',              
+    category: 'Others',       
   },
   { 
     id: 5,  
-    src: anniversary,  
-    alt: 'Luxury Ruby Wedding Anniversary',           
+    images: [pDessertComp, pDessert1C, pDessert2C],  
+    alt: 'Dessert Table',           
     category: 'Weddings',  
-    loc: 'Lost & Found, Leeds', 
-    date: 'Summer 2024',
-    brief: 'An elegant Ruby Anniversary celebration for a couple wanting to recreate their wedding magic.',
-    outcome: 'Curated a bespoke nostalgic experience with red floral accents and personalized storytelling.'
   },
   { 
     id: 7,  
-    src: w3,     
-    alt: 'Elegant floral reception',              
-    category: 'Weddings',      
-    loc: 'Whirlowbrook Hall', 
-    date: 'Winter 2024',
-    brief: 'A winter wonderland theme focusing on warmth, candlelight, and white florals.',
-    outcome: 'Managed complex indoor logistics during extreme weather with no impact on guest experience.'
+    images: [pGuestSeatComp, pGuestbookC, pSeatingC],     
+    alt: 'Guestbook & Seating Plan',              
+    category: 'Others',      
   },
   { 
     id: 6,  
-    src: about,  
+    images: [pFounder],  
     alt: 'The Founder at a venue',                
     category: 'Weddings',      
-    loc: 'Sheffield Cathedral', 
-    date: 'Autumn 2024',
-    brief: 'Showcasing our ability to work within historic and sacred architectural spaces.',
-    outcome: 'Negotiated sensitive logistics with cathedral heritage teams for a successful event.'
   },
 ];
 
-const FILTERS = ['All', 'Weddings', 'Corporate', 'Private'];
+const FILTERS = ['All', 'Weddings', 'Corporate', 'Others'];
 const PAGE_SIZE = 6;
+
+const PortfolioItem = ({ item }) => {
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+  const images = item.images || [];
+  const hasMultiple = images.length > 1;
+  const timeoutRef = React.useRef(null);
+
+  const resetTimer = React.useCallback(() => {
+    if (timeoutRef.current) clearInterval(timeoutRef.current);
+    if (hasMultiple) {
+      timeoutRef.current = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % images.length);
+      }, 5000);
+    }
+  }, [hasMultiple, images.length]);
+
+  React.useEffect(() => {
+    resetTimer();
+    return () => {
+      if (timeoutRef.current) clearInterval(timeoutRef.current);
+    };
+  }, [resetTimer]);
+
+  const nextSlide = (e) => {
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+    resetTimer();
+  };
+
+  const prevSlide = (e) => {
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+    resetTimer();
+  };
+
+  return (
+    <div className="portfolio-full-item reveal">
+      <div className="pf-img-box">
+        <div className="pf-slider-track" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+          {images.map((img, idx) => (
+            <img key={idx} src={img} alt={`${item.alt} - view ${idx + 1}`} loading="lazy" />
+          ))}
+        </div>
+        
+        <div className="pf-overlay">
+          <span className="eyebrow eyebrow-light">{item.category}</span>
+        </div>
+
+        {hasMultiple && (
+          <>
+            <div className="pf-slider-nav">
+              <button className="slider-arrow prev" onClick={prevSlide} aria-label="Previous image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6" /></svg>
+              </button>
+              <button className="slider-arrow next" onClick={nextSlide} aria-label="Next image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 18l6-6-6-6" /></svg>
+              </button>
+            </div>
+            <div className="pf-slider-dots">
+              {images.map((_, idx) => (
+                <span 
+                  key={idx} 
+                  className={`dot ${idx === currentIndex ? 'active' : ''}`}
+                  onClick={(e) => { e.stopPropagation(); setCurrentIndex(idx); }}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+      <div className="pf-info">
+        <h3>{item.alt}</h3>
+      </div>
+    </div>
+  );
+};
 
 const PortfolioPage = () => {
   const [active, setActive] = useState('All');
@@ -127,7 +192,7 @@ const PortfolioPage = () => {
       <PageHero
         eyebrow="Portfolio"
         title={<span>A Glimpse Into <em>Our Events</em></span>}
-        subtitle="Browse our recent projects across weddings, corporate events, and bespoke private celebrations."
+        subtitle="Browse our recent projects across weddings, corporate events, and other bespoke celebrations."
       />
 
       <section className="section bg-light" style={{ paddingBottom: 'var(--space-16)' }}>
@@ -151,17 +216,7 @@ const PortfolioPage = () => {
 
           <div className="portfolio-full-grid" ref={gridRef}>
             {paginatedItems.map((item) => (
-              <div key={item.id} className="portfolio-full-item reveal">
-                <div className="pf-img-box">
-                  <img src={item.src} alt={item.alt} loading="lazy" />
-                  <div className="pf-overlay">
-                    <span className="eyebrow eyebrow-light">{item.category}</span>
-                  </div>
-                </div>
-                <div className="pf-info">
-                  <h3>{item.alt}</h3>
-                </div>
-              </div>
+              <PortfolioItem key={item.id} item={item} />
             ))}
           </div>
 
