@@ -8,6 +8,7 @@ import { useScrollReveal, useScrollRevealAll } from '../hooks/useScrollReveal';
 const AboutPage = () => {
   const storyImgRef = useScrollReveal({ threshold: 0.1 });
   const storyTextRef = useScrollReveal({ threshold: 0.1 });
+  const bodyTextRef = useScrollReveal({ threshold: 0.1 });
   const philosophyRef = useScrollReveal({ threshold: 0.1 });
   const valuesHeaderRef = useScrollReveal({ threshold: 0.1 });
   const valuesGridRef = useScrollRevealAll({ threshold: 0.1 });
@@ -23,6 +24,16 @@ const AboutPage = () => {
 
       <section className="section bg-light" aria-label="The Full Story">
         <div className="container about-page-grid">
+
+          {/* Heading + Lead Quote — always first */}
+          <div className="about-page-intro reveal-right" ref={storyTextRef}>
+            <h2>The Visionary <em className="display-italic">Journey</em></h2>
+            <p className="lead">
+              "Isn't being a wedding planner every girl's dream? I just decided to follow mine..."
+            </p>
+          </div>
+
+          {/* Image — desktop: left column spanning rows, mobile: between intro and body */}
           <div className="about-page-img reveal-left" ref={storyImgRef}>
             <div className="img-frame">
               <img src={visionaryImg} alt="Opal Events Founder" loading="lazy" />
@@ -33,11 +44,8 @@ const AboutPage = () => {
             </div>
           </div>
 
-          <div className="about-page-content reveal-right" ref={storyTextRef}>
-            <h2>The Visionary <em className="display-italic">Journey</em></h2>
-            <p className="lead">
-              "Isn't being a wedding planner every girl's dream? I just decided to follow mine..."
-            </p>
+          {/* Remaining Story Body */}
+          <div className="about-page-body reveal-right" ref={bodyTextRef}>
             <p>
               In 2020, while working full-time, I did an online Wedding Planning course which delved into weddings of different cultures, such as Nigerian, South Asian, and Slovakian. During the planning of my own multicultural wedding (British/Nigerian), I was reminded of my love for planning and the cultural variety I experienced in my training.
             </p>
@@ -45,10 +53,10 @@ const AboutPage = () => {
               The course also looked at how to run your own wedding planning business—I spent months debating how someone with so much passion but little experience in the industry could start that business.
             </p>
             <p>
-              In the end, what made the most sense to me was to at least start in the industry, so in 2023, I quit my job and started working freelance as a Wedding Coordinator for a venue. That’s when I realized what it takes to succeed in weddings and events: hard work and long hours, but also passion, great customer service, and connections. It solidified that this was what I wanted to do.
+              In the end, what made the most sense to me was to at least start in the industry, so in 2023, I quit my job and started working freelance as a Wedding Coordinator for a venue. That's when I realized what it takes to succeed in weddings and events: hard work and long hours, but also passion, great customer service, and connections. It solidified that this was what I wanted to do.
             </p>
             <p>
-              I moved to a venue close to the city centre and within 18 months, I had been promoted twice—from Wedding & Venue Assistant to Wedding & Event Coordinator, and then from Coordinator to Hospitality Manager. The transition into these roles felt natural and expanded my knowledge and understanding of events as a whole, as well as the detail behind planning and running not only the events but hiring, training, and leading a passionate team too.
+              I moved to a venue close to the city centre and within 18 months, I had been promoted twice—from Wedding &amp; Venue Assistant to Wedding &amp; Event Coordinator, and then from Coordinator to Hospitality Manager. The transition into these roles felt natural and expanded my knowledge and understanding of events as a whole, as well as the detail behind planning and running not only the events but hiring, training, and leading a passionate team too.
             </p>
             <p>
               It gave me the chance to build my skills in areas such as budget management, scheduling, problem-solving, and logistics—all things that stand me in good stead for building my own business and helping my customers in their planning journey.
@@ -60,6 +68,7 @@ const AboutPage = () => {
               So welcome to this journey of passion!
             </p>
           </div>
+
         </div>
       </section>
 
