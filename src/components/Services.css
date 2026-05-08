@@ -132,5 +132,9 @@
 
 @media (max-width: 768px) {
   .services-grid { grid-template-columns: 1fr; gap: var(--space-6); }
-  .services-cta-link { font-size: var(--text-xl); }
+  .services-cta-link { font-size: var(--text-xl); flex-wrap: wrap; justify-content: center; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .services-cta-link { font-size: var(--text-lg); }
 }

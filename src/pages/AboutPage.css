@@ -240,6 +240,11 @@
     gap: var(--space-12);
   }
 
+  .founder-badge {
+    right: 0;
+    bottom: -16px;
+  }
+
   .values-grid {
     grid-template-columns: 1fr;
     max-width: 500px;

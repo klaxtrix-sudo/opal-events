@@ -145,7 +145,11 @@
     width: 76px;
     height: 76px;
     bottom: -14px;
-    left: -8px;
+    left: 0;
+  }
+
+  .about-image-wrap::before {
+    inset: -12px 0 12px 0;
   }
 }
 
