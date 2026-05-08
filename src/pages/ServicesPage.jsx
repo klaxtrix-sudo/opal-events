@@ -100,15 +100,15 @@ const allServices = [
     )
   },
   {
-    id: 'styling',
+    id: 'freelance-management',
     eyebrow: '08',
-    title: 'Room Styling',
-    description: 'Got the vision but need someone to bring it to life? From simple & elegant to magnificent & maximalist, we breathe life into your concept on the day.',
+    title: 'Freelance Event Manager',
+    description: 'Professional onsite leadership for venues and establishments. We step in to coordinate and flawlessly execute specific events on your behalf — ensuring your venue\'s high standards are upheld.',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden="true">
-        <path d="M4 28h24" strokeLinecap="round"/>
-        <path d="M10 28V16M22 28V16" strokeLinecap="round"/>
-        <path d="M7 16h18a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2Z" strokeLinecap="round"/>
+        <path d="M12 4h8a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" strokeLinecap="round"/>
+        <path d="M8 8H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2" strokeLinecap="round"/>
+        <path d="M10 16h12M10 21h8" strokeLinecap="round"/>
       </svg>
     )
   },

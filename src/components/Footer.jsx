@@ -55,7 +55,7 @@ const Footer = () => (
           <li><Link to="/services">Event Coordination</Link></li>
           <li><Link to="/services">Venue Sourcing</Link></li>
           <li><Link to="/services">Concept Creation</Link></li>
-          <li><Link to="/services">Room Styling</Link></li>
+          <li><Link to="/services">Freelance Event Manager</Link></li>
         </ul>
       </div>
 

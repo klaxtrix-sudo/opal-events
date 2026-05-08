@@ -49,9 +49,11 @@ const icons = {
       <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" />
     </svg>
   ),
-  styling: (
+  freelance: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z" />
+      <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+      <rect x="8" y="2" width="8" height="4" rx="1" />
+      <path d="M9 12h6M9 16h6" opacity="0.6" />
     </svg>
   ),
 };
@@ -64,7 +66,7 @@ const services = [
   { key: 'meetings', num: '05', title: 'Planning & Update Meetings', description: 'We can check-in as regularly as you like to see what’s going on, amend any plans and discuss any challenges.' },
   { key: 'timeline', num: '06', title: 'Complete Event Timelines', description: 'No event runs smoothly without a run of events. This allows all staff, suppliers and event hosts to be in sync with the plan.' },
   { key: 'concept', num: '07', title: 'Concept Creation', description: "Want to host an event but not sure on theme or style? We can work with you to pull a concept together and put a plan in place on how to bring it to life." },
-  { key: 'styling', num: '08', title: 'Room Styling', description: 'Got the vision but need someone to bring it to life? We can work together to breathe life into the concept whether its simple & elegant or magnificent & maximalist.' },
+  { key: 'freelance', num: '08', title: 'Freelance Event Manager', description: 'Professional onsite leadership for venues and establishments. We step in to coordinate and execute specific events on your behalf, ensuring your high standards are upheld.' },
 ];
 
 const Services = () => {
