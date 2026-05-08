@@ -124,8 +124,8 @@ const ServicesPage = () => {
     <div className="services-page">
       <PageHero
         eyebrow="Our Offerings"
-        title={<span>Services Built for <em>Your Vision</em></span>}
-        subtitle="Every service is designed to give you peace of mind — from the first conversation to the final toast."
+        title={<span>Wedding Planner &amp; <em>Event Planning Sheffield</em></span>}
+        subtitle="Professional Wedding Coordinator and Event Planner in Yorkshire, providing diamond-standard celebrations from concept to final toast."
       />
 
       {/* All Services */}

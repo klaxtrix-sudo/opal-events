@@ -39,8 +39,8 @@ const Hero = () => {
 
           <div className="hero-title-wrapper">
             <h1 className="hero-heading">
-              Wedding &amp;<br />
-              <span className="display-italic">Event Services</span>
+              Wedding Planner &amp;<br />
+              <span className="display-italic">Event Services Sheffield</span>
             </h1>
           </div>
 

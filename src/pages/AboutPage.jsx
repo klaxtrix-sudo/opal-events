@@ -18,8 +18,8 @@ const AboutPage = () => {
     <div className="about-page">
       <PageHero
         eyebrow="Our Story"
-        title={<span>About <em>Opal Events</em></span>}
-        subtitle="Opal Events was born from a desire to bring diamond-standard planning to every celebration, regardless of size or budget."
+        title={<span>About <em>Opal Events Sheffield</em></span>}
+        subtitle="A premier Wedding Planner and Event Coordinator in Yorkshire, born from a desire to bring diamond-standard planning to every celebration."
       />
 
       <section className="section bg-light" aria-label="The Full Story">
