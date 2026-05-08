@@ -63,7 +63,7 @@ const Footer = () => (
       <div className="footer-col">
         <h4 className="footer-col-heading">Contact</h4>
         <address className="footer-contact">
-          <a href="mailto:contact@opalevents.co.uk">contact@opalevents.co.uk</a>
+          <a href="mailto:contact@opalevent.co.uk">contact@opalevent.co.uk</a>
           <span>Sheffield, South Yorkshire</span>
           
           <div className="footer-social" role="list" aria-label="Social Media">

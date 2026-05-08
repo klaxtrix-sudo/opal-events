@@ -38,8 +38,8 @@ const ContactForm = () => {
               <div className="contact-detail-icon"><EmailIcon /></div>
               <div>
                 <span className="contact-detail-label">Email</span>
-                <a href="mailto:contact@opalevents.co.uk" className="contact-detail-value">
-                  contact@opalevents.co.uk
+                <a href="mailto:contact@opalevent.co.uk" className="contact-detail-value">
+                  contact@opalevent.co.uk
                 </a>
               </div>
             </div>

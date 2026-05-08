@@ -9,10 +9,53 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
+import emailjs from '@emailjs/browser';
+
 const ContactPage = () => {
   const formRef = useScrollReveal({ threshold: 0.1 });
   const infoRef1 = useScrollReveal({ threshold: 0.1 });
   const infoRef2 = useScrollReveal({ threshold: 0.1 });
+
+  const [result, setResult] = React.useState("");
+  const [status, setStatus] = React.useState(""); // "success", "error", or ""
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setResult("Sending...");
+    setStatus("");
+
+    // Simple Honeypot check
+    if (event.target.botcheck.checked) {
+      console.log("Spam detected.");
+      return;
+    }
+
+    try {
+      const response = await emailjs.sendForm(
+        'service_2job3yq', 
+        'template_3zucl5f', 
+        event.target, 
+        'sIeQ69uZEY2K8b9nP'
+      );
+
+      if (response.status === 200) {
+        setStatus("success");
+        setResult("Enquiry sent successfully! We'll be in touch soon.");
+        event.target.reset();
+      } else {
+        setStatus("error");
+        setResult("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.log("EmailJS Error", error);
+      setStatus("error");
+      setResult("Unable to send enquiry. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="contact-page">
@@ -30,26 +73,29 @@ const ContactPage = () => {
               <p>Tell us a little about your event and we'll get back to you shortly.</p>
             </div>
             
-            <form className="contact-page-form">
+            <form onSubmit={onSubmit} className="contact-page-form">
+              {/* Security Honeypot */}
+              <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+
               <div className="cp-form-row">
                 <div className="cp-form-group">
                   <label htmlFor="cp-name">Full Name *</label>
-                  <input type="text" id="cp-name" required placeholder="Your name" />
+                  <input type="text" id="cp-name" name="name" required placeholder="Your name" />
                 </div>
                 <div className="cp-form-group">
                   <label htmlFor="cp-email">Email Address *</label>
-                  <input type="email" id="cp-email" required placeholder="you@example.com" />
+                  <input type="email" id="cp-email" name="email" required placeholder="you@example.com" />
                 </div>
               </div>
 
               <div className="cp-form-row">
                 <div className="cp-form-group">
                   <label htmlFor="cp-phone">Phone Number *</label>
-                  <input type="tel" id="cp-phone" required placeholder="07XXX XXXXXX" />
+                  <input type="tel" id="cp-phone" name="phone" required placeholder="07XXX XXXXXX" />
                 </div>
                 <div className="cp-form-group">
                   <label htmlFor="cp-event-type">Event Type *</label>
-                  <select id="cp-event-type" required>
+                  <select id="cp-event-type" name="event_type" required>
                     <option value="">Select type</option>
                     <option value="wedding">Wedding</option>
                     <option value="corporate">Corporate</option>
@@ -60,17 +106,23 @@ const ContactPage = () => {
 
               <div className="cp-form-group">
                 <label htmlFor="cp-date">Preferred Event Date</label>
-                <input type="date" id="cp-date" />
+                <input type="date" id="cp-date" name="event_date" />
               </div>
 
               <div className="cp-form-group">
                 <label htmlFor="cp-message">Tell us about your vision *</label>
-                <textarea id="cp-message" rows="5" required placeholder="Date, guests, venue, style ideas..."></textarea>
+                <textarea id="cp-message" name="message" rows="5" required placeholder="Date, guests, venue, style ideas..."></textarea>
               </div>
 
-              <button type="submit" className="btn btn-primary cp-submit">
-                <span>Send Enquiry</span>
-                <span className="shimmer"></span>
+              {result && (
+                <div className={`cp-status-msg ${status}`}>
+                  {result}
+                </div>
+              )}
+
+              <button type="submit" className="btn btn-primary cp-submit" disabled={isSubmitting}>
+                <span>{isSubmitting ? "Sending..." : "Send Enquiry"}</span>
+                {!isSubmitting && <span className="shimmer"></span>}
               </button>
             </form>
           </div>
@@ -81,9 +133,9 @@ const ContactPage = () => {
               <p>Reach out to us and we'll get back to you within 24 hours.</p>
 
               <div className="cp-contact-links">
-                <a href="mailto:contact@opalevents.co.uk" className="cp-link">
+                <a href="mailto:contact@opalevent.co.uk" className="cp-link">
                   <span className="cp-label">Email</span>
-                  <span className="cp-value">contact@opalevents.co.uk</span>
+                  <span className="cp-value">contact@opalevent.co.uk</span>
                 </a>
                 <a href="https://wa.me/447544782266" className="cp-link-wa">
                   <WhatsAppIcon />
