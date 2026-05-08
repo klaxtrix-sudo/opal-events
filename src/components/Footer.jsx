@@ -67,13 +67,13 @@ const Footer = () => (
           <span>Sheffield, South Yorkshire</span>
           
           <div className="footer-social" role="list" aria-label="Social Media">
-            <a href="#" className="social-icon-btn" aria-label="Instagram" role="listitem" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/_opal.events_/" className="social-icon-btn" aria-label="Instagram" role="listitem" target="_blank" rel="noopener noreferrer">
               <InstagramIcon />
             </a>
-            <a href="#" className="social-icon-btn" aria-label="Facebook" role="listitem" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/people/Opal-Events-Ltd/61575393159059/#" className="social-icon-btn" aria-label="Facebook" role="listitem" target="_blank" rel="noopener noreferrer">
               <FacebookIcon />
             </a>
-            <a href="#" className="social-icon-btn" aria-label="LinkedIn" role="listitem" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/company/opal-events-sheff/" className="social-icon-btn" aria-label="LinkedIn" role="listitem" target="_blank" rel="noopener noreferrer">
               <LinkedInIcon />
             </a>
           </div>
