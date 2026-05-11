@@ -16,6 +16,7 @@ const ContactPage = () => {
   const infoRef1 = useScrollReveal({ threshold: 0.1 });
   const infoRef2 = useScrollReveal({ threshold: 0.1 });
 
+  const [locationValue, setLocationValue] = React.useState("");
   const [result, setResult] = React.useState("");
   const [status, setStatus] = React.useState(""); // "success", "error", or ""
   const [isSubmitting, setIsSubmitting] = React.useState(false);
@@ -44,6 +45,7 @@ const ContactPage = () => {
         setStatus("success");
         setResult("Enquiry sent successfully! We'll be in touch soon.");
         event.target.reset();
+        setLocationValue(""); // Reset selection
       } else {
         setStatus("error");
         setResult("Something went wrong. Please try again.");
@@ -103,6 +105,43 @@ const ContactPage = () => {
                   </select>
                 </div>
               </div>
+
+              <div className="cp-form-row">
+                <div className="cp-form-group">
+                  <label htmlFor="cp-location">Location *</label>
+                  <select 
+                    id="cp-location" 
+                    name="location" 
+                    required 
+                    onChange={(e) => setLocationValue(e.target.value)}
+                    value={locationValue}
+                  >
+                    <option value="">Select location</option>
+                    <option value="Sheffield">Sheffield</option>
+                    <option value="Nottingham">Nottingham</option>
+                    <option value="Derby">Derby</option>
+                    <option value="Chesterfield">Chesterfield</option>
+                    <option value="Barnsley">Barnsley</option>
+                    <option value="Rotherham">Rotherham</option>
+                    <option value="Leeds">Leeds</option>
+                    <option value="Newcastle">Newcastle</option>
+                    <option value="South Shields">South Shields</option>
+                    <option value="Carlisle">Carlisle</option>
+                    <option value="other">Other: Please State</option>
+                  </select>
+                </div>
+                <div className="cp-form-group">
+                  <label htmlFor="cp-guests">Number of Guests *</label>
+                  <input type="number" id="cp-guests" name="guests" min="1" required placeholder="e.g. 100" />
+                </div>
+              </div>
+
+              {locationValue === 'other' && (
+                <div className="cp-form-group">
+                  <label htmlFor="cp-other-location">Please State Location *</label>
+                  <input type="text" id="cp-other-location" name="other_location" required placeholder="Enter your preferred location" />
+                </div>
+              )}
 
               <div className="cp-form-group">
                 <label htmlFor="cp-date">Preferred Event Date</label>
