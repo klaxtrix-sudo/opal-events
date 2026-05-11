@@ -130,22 +130,24 @@ const ContactPage = () => {
                     <option value="other">Other: Please State</option>
                   </select>
                 </div>
+
+                {locationValue === 'other' && (
+                  <div className="cp-form-group">
+                    <label htmlFor="cp-other-location">Please State Location *</label>
+                    <input type="text" id="cp-other-location" name="other_location" required placeholder="Enter your preferred location" />
+                  </div>
+                )}
+              </div>
+
+              <div className="cp-form-row">
                 <div className="cp-form-group">
                   <label htmlFor="cp-guests">Number of Guests *</label>
                   <input type="number" id="cp-guests" name="guests" min="1" required placeholder="e.g. 100" />
                 </div>
-              </div>
-
-              {locationValue === 'other' && (
                 <div className="cp-form-group">
-                  <label htmlFor="cp-other-location">Please State Location *</label>
-                  <input type="text" id="cp-other-location" name="other_location" required placeholder="Enter your preferred location" />
+                  <label htmlFor="cp-date">Preferred Event Date</label>
+                  <input type="date" id="cp-date" name="event_date" />
                 </div>
-              )}
-
-              <div className="cp-form-group">
-                <label htmlFor="cp-date">Preferred Event Date</label>
-                <input type="date" id="cp-date" name="event_date" />
               </div>
 
               <div className="cp-form-group">
